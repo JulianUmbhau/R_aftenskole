@@ -38,16 +38,20 @@ Kode igennem scripts
 
 Kode igennem funktioner
 
+### 4. 
+Data manipulation
 
-### Visualisering i R
+### 5. 
+Data eksploration og visualisering 
 Visualisering i R basic
-- Visualisering i ggplot
 
-### Versionering
+### 6.
+Tidyverse pipes
+ggplot visualisering
+
+### Versionering?
 Hvorfor versionering
 Github konto
-
-### 
 
 ### R Markdown
 
