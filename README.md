@@ -24,10 +24,17 @@ Data analyse i R - baggrund
 - Muligheder med data analyse i R (eller andre sprog)
 - R Pros and Cons
 
+Show off af muligheder i R
+- Data cleaning og træning med efterfølgende visualisering
+    - animeret?
+
 Introduktion til R og Rstudio
 - Installation og opsætning af R og Rstudio
 
 ### 2. Datatyper og open source
+Objekter i R
+- Variabler - best practice
+
 Datatyper
 - Logical (logisk)
     - true/false
@@ -60,16 +67,25 @@ Manglende data
 Quiz?
 
 ### 3. Grundlæggende kodning i R
-Pakker
+Hvad er pakker i R?
 - Ideen bag open source og code
+
+Hvad er en funktion?
+- reuseable code
+- arguments
+- output/action
+- Lær mere om funktionen ?print
 
 Kode igennem scripts
 - Ideen bag reproducerbare analyser
+- Kommentarer i kode
 - 
 
-Kode igennem funktioner
-- Baggrunden bag funktioner
-- Syntax for egne funktioner i R
+Hvordan laver man en funktion i R?
+- definition
+- scope
+- input
+- output
 
 Øvelser
 
@@ -82,6 +98,18 @@ Forstå en dataframe
 
 Indlæsning af data
 - forskellige typer data
+- base datasets
+
+Operatorer
+- assignment
+- minus, plus, gange, dividere
+- <, >
+- &, |, !
+
+Konditionelle operatorer
+- if
+- else
+- if else
 
 Funktioner
 - print
@@ -101,7 +129,11 @@ Visualisering i R basic
 - 
 
 ### 6.
-Tidyverse pipes
+Tidyverse 
+- pipes
+- tibbles
+- 
+
 ggplot visualisering
 
 ### Versionering?
