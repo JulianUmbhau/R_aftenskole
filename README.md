@@ -1,17 +1,28 @@
-# Undervisningsplan
-- 6 undervisningsgange med 2 lektioner pr gang, en gang ugentligt
-- Undervisningsgang er 2 lektioner af 45 min + pause
-- Øvelser til undervisning, og imellem undervisning
+# R aftenskole
+6 undervisningsgange med 2 lektioner pr gang, en gang ugentligt
+Undervisningsgang er 2 lektioner af 45 min + pause
+Øvelser til undervisning, og imellem undervisning
 
 ### Nødvendigt til undervisning
 - Computer
 
+### Nødvendige faciliteter
+- Internet
+- Projektor 
+
 ### Online gratis lærings materiale
 - https://www.coursera.org/learn/data-analysis-r#syllabus
 - https://www.tutorialspoint.com/r/index.htm
+- http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/
 
-## Plan
-### 1. Introduktion til R, Rstudio og data analyse
+
+# Undervisningsplan
+Vil du gerne lære at arbejde med data, lave data analyser og data visualiseringer?
+Dette kursus er for dig, der vil lære fundamentet for data analyser i programmeringssproget R - første skridt på vejen mod data science og data analysis på professionelt niveau. 
+
+Du kommer til at tage de første skridt indenfor data manipulation, data analyse, data visualisering, data science best practices og software udvikling
+
+## 1. Introduktion til R, Rstudio og data analyse
 - https://cran.r-project.org/bin/windows/base/
 - https://www.rstudio.com/products/rstudio/download/#download
 
@@ -31,9 +42,9 @@ Show off af muligheder i R
 Introduktion til R og Rstudio
 - Installation og opsætning af R og Rstudio
 
-### 2. Datatyper og open source
+## 2. Datatyper og open source
 Objekter i R
-- Variabler - best practice
+- Variabler og variabelnavne
 
 Datatyper
 - Logical (logisk)
@@ -66,7 +77,7 @@ Manglende data
 Øvelser
 Quiz?
 
-### 3. Grundlæggende kodning i R
+## 3. Grundlæggende kodning i R
 Hvad er pakker i R?
 - Ideen bag open source og code
 
@@ -89,8 +100,7 @@ Hvordan laver man en funktion i R?
 
 Øvelser
 
-### 4. 
-Data manipulation
+## 4. Data manipulation
 
 Forstå en dataframe
 - rækker
@@ -119,28 +129,35 @@ Funktioner
 
 Øvelser
 
-### 5. 
-Data eksploration og visualisering 
+## 5. Data udforskning og visualisering 
+Udforskning af data
 - Mean, median, mode
 - Unique, max, min
-- type, str, 
+- type, str
 
 Visualisering i R basic
-- 
+- Diverse plot funktioner
+    - Pie, Bar, Scatter
+- Plot manipulering
 
-### 6.
-Tidyverse 
-- pipes
-- tibbles
-- 
+Avanceret visualisering i R
+- ggplot2 pakken
 
-ggplot visualisering
+Øvelser
 
-### Versionering?
-Hvorfor versionering
-Github konto
+## 6. Pipes og Tidyverse
+Tidyverse
+- Forstå pipes
+- tibbles dataframe
+- tidyverse pakker
 
-### R Markdown
+Øvelser
 
-
+## Ekstra emner
+#### Versionering
+- Hvorfor er versionering vigtig?
+- Hvordan sørger man for god versionering?
+- Git repositories
+#### R Markdown 
+- Markdown til dokumentation
 
