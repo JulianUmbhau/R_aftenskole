@@ -1,33 +1,29 @@
 # R aftenskole
 6 undervisningsgange med 2 lektioner pr gang, en gang ugentligt
 Undervisningsgang er 2 lektioner af 45 min + pause
-Øvelser til undervisning, og imellem undervisning
+UNdervisningsgangen består af undervisers introduktion og forklaring af nyt emne/koncept, efterfulgt af øvelser.
+Der vil også være øvelser som frivilligt hjemmearbejde.
 
-### Nødvendigt til undervisning
-- Computer
-
-### Nødvendige faciliteter
-- Internet
-- Projektor 
+### Nødvendigt for kursister
+- Egen computer med fungerende wifi
 
 ### Online gratis lærings materiale
 - https://www.coursera.org/learn/data-analysis-r#syllabus
 - https://www.tutorialspoint.com/r/index.htm
 - http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/
 
-
 # Undervisningsplan
-Vil du gerne lære at arbejde med data, lave data analyser og data visualiseringer?
-Dette kursus er for dig, der vil lære fundamentet for data analyser i programmeringssproget R - første skridt på vejen mod data science og data analysis på professionelt niveau. 
+Vil du gerne lære at arbejde med data, lave data analyser og data visualiseringer? \
+Dette kursus er for dig, der vil lære fundamentet for data analyser i programmeringssproget R - Det første skridt på vejen mod data science og data analysis på professionelt niveau. 
 
-Du kommer til at tage de første skridt indenfor data manipulation, data analyse, data visualisering, data science best practices og software udvikling
+Du kommer til at lære det grundlæggende indenfor data manipulation, data analyse, data visualisering, data science best practices og software udvikling
 
 ## 1. Introduktion til R, Rstudio og data analyse
-- https://cran.r-project.org/bin/windows/base/
-- https://www.rstudio.com/products/rstudio/download/#download
+- https://cran.r-project.org/bin/windows/base/ (R download)
+- https://www.rstudio.com/products/rstudio/download/#download (Rstudio download)
 
-Get to know each other
-- Hvem er jeg
+Geting to know each other
+- Mine erfaringer med R
 - Kursisters udgangspunkt, interesseniveau, erfaring
 
 Data analyse i R - baggrund
@@ -37,7 +33,6 @@ Data analyse i R - baggrund
 
 Show off af muligheder i R
 - Data cleaning og træning med efterfølgende visualisering
-    - animeret?
 
 Introduktion til R og Rstudio
 - Installation og opsætning af R og Rstudio
@@ -153,11 +148,12 @@ Tidyverse
 
 Øvelser
 
-## Ekstra emner
+## + Ekstra emner
 #### Versionering
 - Hvorfor er versionering vigtig?
 - Hvordan sørger man for god versionering?
 - Git repositories
+
 #### R Markdown 
 - Markdown til dokumentation
 
