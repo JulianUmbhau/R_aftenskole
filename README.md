@@ -19,8 +19,8 @@ Dette kursus er for dig, der vil lære fundamentet for data analyser i programme
 Du kommer til at lære det grundlæggende indenfor data manipulation, data analyse, data visualisering, data science best practices og software udvikling
 
 ## 1. Introduktion til R, Rstudio og data analyse
-- https://cran.r-project.org/bin/windows/base/ (R download)
-- https://www.rstudio.com/products/rstudio/download/#download (Rstudio download)
+- https://cran.r-project.org/bin/windows/base/ (Gratis R download)
+- https://www.rstudio.com/products/rstudio/download/#download (Gratis Rstudio download)
 
 Geting to know each other
 - Mine erfaringer med R
