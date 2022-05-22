@@ -1,7 +1,7 @@
 # R aftenskole
-6 undervisningsgange med 2 lektioner pr gang, en gang ugentligt
-Undervisningsgang er 2 lektioner af 45 min + pause
-UNdervisningsgangen består af undervisers introduktion og forklaring af nyt emne/koncept, efterfulgt af øvelser.
+6 undervisningsgange, ugentlige \
+En undervisningsgang er 2 lektioner af 45 min + pause \
+Undervisningsgangen består af undervisers introduktion og forklaring af nyt emne/koncept, efterfulgt af øvelser. \
 Der vil også være øvelser som frivilligt hjemmearbejde.
 
 ### Nødvendigt for kursister
