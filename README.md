@@ -21,7 +21,7 @@ Dette kursus er for dig, der vil lære fundamentet for data analyser i programme
 Du kommer til at lære det grundlæggende indenfor data manipulation, data analyse, data visualisering, data science best practices og software udvikling
 
 #### Se et eksempel på data analyse og visualisering udført i R
-https://julian-johannes-umbhau-jensen.shinyapps.io/workspace/
+https://julian-johannes-umbhau-jensen.shinyapps.io/workspace/ \
 (Det kan tage op til 30 sekunder for at loade, fordi serveren er i dvaletilstand)
 
 ## 1. Introduktion til R, Rstudio og data analyse
