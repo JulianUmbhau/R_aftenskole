@@ -78,30 +78,7 @@ Manglende data
 Øvelser
 Quiz?
 
-## 3. Grundlæggende kodning i R
-Hvad er pakker i R?
-- Ideen bag open source og code
-
-Hvad er en funktion?
-- reuseable code
-- arguments
-- output/action
-- Lær mere om funktionen ?print
-
-Kode igennem scripts
-- Ideen bag reproducerbare analyser
-- Kommentarer i kode
-- 
-
-Hvordan laver man en funktion i R?
-- definition
-- scope
-- input
-- output
-
-Øvelser
-
-## 4. Data manipulation
+## 3. Data manipulation
 
 Forstå en dataframe
 - rækker
@@ -127,6 +104,28 @@ Funktioner
 - cbind
 - rbind
 - merge
+
+Øvelser
+
+## 4. Grundlæggende kodning i R
+Hvad er pakker i R?
+- Ideen bag open source og code
+
+Hvad er en funktion?
+- reuseable code
+- arguments
+- output/action
+- Lær mere om funktionen ?print
+
+Kode igennem scripts
+- Ideen bag reproducerbare analyser
+- Kommentarer i kode
+
+Hvordan laver man en funktion i R?
+- definition
+- scope
+- input
+- output
 
 Øvelser
 
