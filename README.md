@@ -11,8 +11,7 @@ Der vil også være øvelser som frivilligt hjemmearbejde.
 - https://www.coursera.org/learn/data-analysis-r#syllabus
 - https://www.tutorialspoint.com/r/index.htm
 - http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/
-
-
+- install.packages("swirl")
 
 # Undervisningsplan
 Vil du gerne lære at arbejde med data, lave data analyser og data visualiseringer? \
@@ -47,6 +46,12 @@ Introduktion til R og Rstudio
 Objekter i R
 - Variabler og variabelnavne
 
+Hvad er en funktion?
+- reuseable code
+- arguments
+- output/action
+- Lær mere om funktionen ?print
+
 Datatyper
 - Logical (logisk)
     - true/false
@@ -74,9 +79,12 @@ Datastructurer
 
 Manglende data
 - NA, NaN, None
+- Håndtering af NA
+
+Særlige typer data
+- JSON, XML, Yaml, mv.
 
 Øvelser
-Quiz?
 
 ## 3. Data manipulation
 
@@ -86,11 +94,12 @@ Forstå en dataframe
 
 Indlæsning af data
 - forskellige typer data
-- base datasets
+- csv, excel, JSON, mv.
+- print
 
 Operatorer
 - assignment
-- minus, plus, gange, dividere
+- minus, addition, multiplikation, division
 - <, >
 - &, |, !
 
@@ -99,11 +108,16 @@ Konditionelle operatorer
 - else
 - if else
 
-Funktioner
-- print
-- cbind
-- rbind
-- merge
+Workflow funktioner
+- For loops
+- While loops
+- repeat, next, break
+
+Filtrering
+- Ved index `[`
+- Ved tekst `[`
+- `$`
+- `[[]]`
 
 Øvelser
 
@@ -111,21 +125,30 @@ Funktioner
 Hvad er pakker i R?
 - Ideen bag open source og code
 
-Hvad er en funktion?
-- reuseable code
-- arguments
-- output/action
-- Lær mere om funktionen ?print
-
 Kode igennem scripts
 - Ideen bag reproducerbare analyser
 - Kommentarer i kode
 
+Dataframe funktioner
+- cbind
+- rbind
+- merge
+
+Scopes i R
+- Environments - search()
+
 Hvordan laver man en funktion i R?
 - definition
-- scope
+- scope - funktion foregår i undermiljø
 - input
 - output
+
+Best practice
+- Brug editor
+- Indentation
+- 80 karakterer
+- Variabelnavne/funktionsnavne
+- Minimale og Generiske funktioner
 
 Øvelser
 
