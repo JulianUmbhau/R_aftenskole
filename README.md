@@ -8,10 +8,16 @@ Der vil også være øvelser som frivilligt hjemmearbejde.
 - Egen computer med fungerende wifi
 
 ### Online gratis lærings materiale
-- https://www.coursera.org/learn/data-analysis-r#syllabus
-- https://www.tutorialspoint.com/r/index.htm
-- http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/
-- install.packages("swirl")
+Gode R kurser og hjemmesider
+- Data analyse basics i R - [Data Analysis with R Programming](https://www.coursera.org/learn/data-analysis-r#syllabus)
+
+- Statistik i R - [Introduction to Probability and Data with R](https://www.coursera.org/learn/probability-intro)
+
+- Visualisering i R - [Data Visualization & Dashboarding with R Specialization](https://www.coursera.org/specializations/jhu-data-visualization-dashboarding-with-r#courses)
+
+- R oversigt - https://www.tutorialspoint.com/r/index.htm
+- [R ggplot2 visualiserings cheat sheet](http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/)
+- Gode øvelser i en r pakke - https://swirlstats.com/
 
 # Undervisningsplan
 Vil du gerne lære at arbejde med data, lave data analyser og data visualiseringer? \
