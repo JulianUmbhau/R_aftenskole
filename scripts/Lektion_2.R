@@ -26,6 +26,19 @@ test$ <- "test"
 
 _test <- "test"
 
+## Hvad er en funktion?
+mean(x = c(1,2,3))
+# builtin functions, packages and custom functions
+# reusable code
+
+# arguments
+# action/output
+
+test_vektor <- c(1,2,3)
+mean(test_vektor)
+
+print("test")
+
 
 ## Datatyper
 logisk <- TRUE
@@ -81,3 +94,28 @@ str(NaN)
 NULL
 str(NULL)
 
+
+na_vektor <- c(NA, 1,2)
+is.na(na_vektor)
+
+#NA in dataset
+airquality <- datasets::airquality
+is.na(airquality)
+
+is_na_overview <- is.na(airquality)
+
+any(is_na_overview)
+
+
+
+na_vektor[!is.na(na_vektor)]
+
+
+
+
+
+
+### særlige typer data/dataformater
+## JSON
+example <- jsonlite::fromJSON("https://tools.learningcontainer.com/sample-json.json")
+example
