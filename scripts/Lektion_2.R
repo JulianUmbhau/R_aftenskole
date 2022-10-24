@@ -1,6 +1,6 @@
 # R - Grundlæggende data analyse og data visualisering Lektion 2
 
-## Variable i R
+## Variabelnavne i R
 test1 = "test1"
 test1
 
@@ -61,13 +61,13 @@ class(kompleks)
 vektor_character <- c("en","to")
 class(vektor_character)
 
-vektor_numeric <- c(1,2) 
+vektor_numeric <- c(1,2)
 class(vektor_numeric)
 
-liste_simpel <- list(1,"en") 
+liste_simpel <- list(1,"en")
 liste_simpel
 
-liste_kompleks <- list( 
+liste_kompleks <- list(
   numerisk_vektor=vektor_numeric,
   character_vektor=vektor_character
 )
@@ -106,16 +106,41 @@ is_na_overview <- is.na(airquality)
 
 any(is_na_overview)
 
+na.omit(airquality)
 
-
-na_vektor[!is.na(na_vektor)]
-
-
-
-
-
+###
 
 ### særlige typer data/dataformater
 ## JSON
 example <- jsonlite::fromJSON("https://tools.learningcontainer.com/sample-json.json")
 example
+
+
+
+
+####
+# Øvelser
+# Lav en vektor med 6 tal
+vektor <- c(1,29,4,6,1,8)
+# Lav en vektor med 5 tal og en NA
+
+# Fjern NA fra vektoren
+
+# lav en dataframe med 4 kolonner, 5 rækker og mindst 3 forskellige datatyper, hvoraf en celle skal være NA.
+dataframe <- data.frame(
+  test=c(2,3,NA),
+  test2=c("en","to","tre"),
+  logisk=c(T,F,T)
+)
+
+# Fjern rækken der er NA
+
+### Ekstra
+# SKriv na. og vent på funktionerne der kommer frem.
+# Læs på de forskellige na. funktioner og deres forskelle
+
+### Ekstra
+#Der findes også en anden datatype kaldet "faktor", som er en vektor der opdeles i "levels".
+# Den eksisterer for at gøre computeringer hurtigere
+# Omdan vektoren forneden til en factor-type med factor()
+test_vektor <- c("en","to","en")
