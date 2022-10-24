@@ -122,9 +122,10 @@ example
 # Øvelser
 # Lav en vektor med 6 tal
 vektor <- c(1,29,4,6,1,8)
+
 # Lav en vektor med 5 tal og en NA
 
-# Fjern NA fra vektoren
+# Tjek at der er NA i vektoren med en funktion
 
 # lav en dataframe med 4 kolonner, 5 rækker og mindst 3 forskellige datatyper, hvoraf en celle skal være NA.
 dataframe <- data.frame(
