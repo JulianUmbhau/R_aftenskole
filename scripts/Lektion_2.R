@@ -15,6 +15,7 @@ test.
 
 test_ <- "test_"
 test_
+test_jeg_testerobjekt
 
 test% <- "test"
 
@@ -27,10 +28,19 @@ test$ <- "test"
 _test <- "test"
 
 ## Hvad er en funktion?
-mean(x = c(1,2,3))
-# builtin functions, packages and custom functions
-# reusable code
+x <- c(1,2,3)
 
+mean(x)
+
+mean(x = c(1,2,3))
+
+?mean
+
+# builtin functions, packages and custom functions
+# reusable code# 
+install.packages("remotes")
+remotes::install_github("allisonhorst/penguins")
+View(palmerpenguins::penguins)
 # arguments
 # action/output
 
@@ -39,15 +49,22 @@ mean(test_vektor)
 
 print("test")
 
+gangtal<-function(tal1, tal2) {
+  resultat <- tal1 * tal2
+  print(resultat)
+  resultat <- resultat/7
+  resultat
+}
+gangtal(5, 9)
 
 ## Datatyper
-logisk <- TRUE
+logisk <- c(T,F)
 class(logisk)
 
 integers <- integer(1)
 class(integers)
 
-numerisk <- 1
+numerisk <- 1.5
 class(numerisk)
 
 karakterer <- "ord"
@@ -58,8 +75,8 @@ class(kompleks)
 
 
 # Datastrukturer
-vektor_character <- c("en","to")
-class(vektor_character)
+character <- c("en","to")
+class(character)
 
 vektor_numeric <- c(1,2)
 class(vektor_numeric)
@@ -88,6 +105,8 @@ print(a)
 NA
 str(NA)
 
+str()
+
 NaN
 str(NaN)
 
@@ -98,6 +117,8 @@ str(NULL)
 na_vektor <- c(NA, 1,2)
 is.na(na_vektor)
 
+
+
 #NA in dataset
 airquality <- datasets::airquality
 is.na(airquality)
@@ -105,8 +126,13 @@ is.na(airquality)
 is_na_overview <- is.na(airquality)
 
 any(is_na_overview)
+all(is_na_overview)
+
+sum(is.na(airquality$Ozone)) / length(airquality$Ozone)
 
 na.omit(airquality)
+
+
 
 ###
 
@@ -117,7 +143,6 @@ example
 
 
 
-
 ####
 # Øvelser
 # Lav en vektor med 6 tal
@@ -125,14 +150,20 @@ vektor <- c(1,29,4,6,1,8)
 
 # Lav en vektor med 5 tal og en NA
 
+c(1,2,3,99)
+
+c(1,2,3,4,5,NA)
 # Tjek at der er NA i vektoren med en funktion
 
 # lav en dataframe med 4 kolonner, 5 rækker og mindst 3 forskellige datatyper, hvoraf en celle skal være NA.
-dataframe <- data.frame(
+# Se også nedenstående eksempel
+eksempel_dataframe <- data.frame(
   test=c(2,3,NA),
   test2=c("en","to","tre"),
   logisk=c(T,F,T)
 )
+
+
 
 # Fjern rækken der er NA
 

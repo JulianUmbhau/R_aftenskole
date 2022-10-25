@@ -3,8 +3,8 @@
 ## Mulighederne med R
 
 ### Data manipulation
-library(dplyr)
-mtcars
+#library(dplyr)
+testdata <- mtcars
 View(mtcars)
 
 mtcars %>% 
