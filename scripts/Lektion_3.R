@@ -6,6 +6,8 @@
 test_csv <- read.csv(file = "./penguins_data.csv", header = T)
 test_csv
 
+install.packages("openxlsx")
+test <- openxlsx::buildWorkbook(test_csv)
 openxlsx::saveWorkbook(test, file = "./penguins_data.xlsx")
 penguins <- openxlsx::read.xlsx(xlsxFile = "./penguins_data.xlsx")
 penguins
@@ -15,7 +17,7 @@ penguins
 test_vektor <- c(1,2,3,3)
 unique(test_vektor)
 
-head(penguins)
+head(penguins, n = 20)
 tail(penguins)
 
 # Operatorer
@@ -80,7 +82,8 @@ c("en", "to","tre") == c(1,"to","tre")
 
 tal_et <- 2
 tal_to <- 3
-if (tal_et < tal_to) {
+
+if (2 < 3) {
   print("tal_et er lavere end tal_to")
 }
 
@@ -92,7 +95,7 @@ if (tal_et < tal_to) {
 }
 
 tal_to <- 2
-if (tal_et < tal_to) {
+if (2 < 2) {
   print("tal_et er lavere end tal_to")
 } else {
   print("tal_to er lavere end tal_et")
@@ -117,9 +120,13 @@ if (tal_et < tal_to) {
 ### Workflow funktioner
 # For loops
 vektor <- c(1,2,4)
+
+length(vektor)
+
 for (tal in vektor) {
   print(tal)
 }
+
 
 for (tal in seq(vektor)) {
   print(tal)
@@ -127,7 +134,7 @@ for (tal in seq(vektor)) {
 
 start <- 10
 for (tal in vektor) {
-  start =+ start+1
+  start <- start + 1
   print(start)
 }
 
@@ -135,11 +142,12 @@ for (tal in vektor) {
 # While loops
 i <- 0
 below_10 <- 10
-while (below_10) {
+
+while (i >= below_10) {
   i <- i+1
 
   print(i)
-  if(i>=below_10) {
+  if(i >= below_10) {
     break
   }
 }
@@ -203,17 +211,23 @@ test_dataframe$test1[test_dataframe$test2 == "tre"]
 # %in%
 # bruges ved flere værdier
 
-test_dataframe$test1[test_dataframe$test2 == c("tre", "to")]
+test_dataframe$test1[test_dataframe$test2 == c("tre", "to")] # Fungerer ikke
+
 
 test_dataframe$test1[test_dataframe$test2 %in% c("tre", "to")]
 
-
+# Udvidelse af dataframe med en ekstra kolonne 
 test_dataframe$test3 <- c(10,20, 30)
-test_dataframe
 
+# filtrering af dataframe med 2 filtre  & (AND), | (OR) 
 test_dataframe$test1[test_dataframe$test2 %in% c("tre", "to") & test_dataframe$test3 == 20]
 
 test_dataframe$test1[test_dataframe$test2 %in% c("to") | test_dataframe$test3 == 10]
+
+
+# Filtrering med real-life data
+penguins$flipper_length_mm[penguins$flipper_length_mm > 200 & penguins$sex == "female"]
+
 
 
 ### Øvelser
