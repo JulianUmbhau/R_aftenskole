@@ -135,6 +135,10 @@ Kode igennem scripts
 - Ideen bag reproducerbare analyser
 - Kommentarer i kode
 
+Brugbare funktioner
+- table
+- summary
+
 Dataframe funktioner
 - cbind
 - rbind
@@ -179,6 +183,11 @@ Tidyverse
 - Forstå pipes
 - tibbles dataframe
 - tidyverse pakker
+- nyttige funktioner til data manipulation
+
+Visualisering i ggplot2
+- multiple variable i et plot
+- forskellige plot muligheder
 
 Øvelser
 

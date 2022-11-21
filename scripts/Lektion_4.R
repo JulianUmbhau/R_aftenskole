@@ -21,6 +21,16 @@ Se på lektion 3 øvelser!
 
 
 
+# Gode funktioner til oversigt
+# table
+mtcars$gear
+table(mtcars$gear)
+
+summary(mtcars$wt)
+
+summary(mtcars)
+
+
 # Dataframe funktioner
 
 test_df1 <- data.frame(
@@ -158,11 +168,13 @@ divider(tal4, tal3)
 
 
 
-
 ### Øvelser
 # Dataframe øvelser
 penguins <- palmerpenguins::penguins
 
+# Find antallet af NA i sex kolonnen
+
+# Find pingviner som har bill_length_mm over 40, fra 2008, med body_mass_g under 3500. Print deres flipper_length_mm
 
 
 
@@ -189,6 +201,6 @@ faerdig_saetning <- function(input) {
 
 # find på en funktion der sammenligner 2 tal for at se om de er ens og printer resultatet, og ændr funktionen så tal nummer 2 får en default værdi
 tal_sammenligning <- function(tal1, tal2) {
-  
+
 }
 
