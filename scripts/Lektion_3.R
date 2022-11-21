@@ -230,6 +230,8 @@ penguins$flipper_length_mm[penguins$flipper_length_mm > 200 & penguins$sex == "f
 
 
 
+
+
 ### Øvelser
 # Sammenlign nedenstående vektorer med to forskellige operatorer
 test_vektor1 <- c(10,15,20)
@@ -266,3 +268,88 @@ while (i<6) {
 # filtrer på dataframe, så kun stater med Case_Fatality_Ratio over 1 kommer frem
 
 # filtrer på dataframe, så kun stater med Case_Fatality_Ratio over 1 og Confirmed over 30000 kommer frem
+
+
+
+
+
+######################
+### Øvelser løsning
+# Sammenlign nedenstående vektorer med to forskellige operatorer
+test_vektor1 <- c(10,15,20)
+test_vektor2 <- c(20,15,10)
+
+test_vektor1 != test_vektor2
+test_vektor1 %in% test_vektor2
+
+
+# lav en sammenligning der benytter | eller !
+1 != 1
+1 != 1 | 1 == 1
+
+# lav en if-else statement der sammenligner nedenstpende 2 værdier
+test_vaerdi1 <- 5
+test_vaerdi2 <- 6
+
+if (test_vaerdi1 < test_vaerdi2) {
+  print("værdi 1 er lavere end værdi 2")
+}
+
+# Lav et for-loop der printer nedenstående vektor ud
+for_loop_vektor <- c(10,15,20)
+for (var in for_loop_vektor) {
+  print(var)
+}
+
+
+# lav nedenstående while-loop færdigt, så det printer følgende ud: 1,2,3,5
+i=0
+while (i<5) {
+  i <- i+1
+  if (i == 4) {
+    next 
+  }
+  print(i)
+}
+
+
+### Dataframe øvelser
+# Indlæs nedenstående hjemmeside fil 
+url <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/10-30-2022.csv"
+
+df <- read.csv(url)
+
+# Er der NA i dataframe?
+any(is.na(df))
+
+# hvilke kolonner har NA?
+any(is.na(df$Province_State))
+
+kolonne_navne <- names(df)
+
+for (kolonne in kolonne_navne) {
+  if (any(is.na(df[kolonne]))) {
+    print(kolonne)
+  }
+}
+
+# Hvis vi vil vide hvor mange der er NA
+for (kolonne in kolonne_navne) {
+  if (any(is.na(df[kolonne]))) {
+    antal_na <- sum(is.na(df[kolonne]))
+    print(paste0(kolonne, " antal na: ", antal_na))
+  }
+}
+
+
+
+# filtrer på dataframe, så kun Arizona kommer frem
+df[df$Province_State == "Arizona",] # filtrerer kun på rækker, derfor er komma nødvendigt
+df[df$Province_State == "Arizona", "Confirmed"] # med filtrering på kolonner
+
+# filtrer på dataframe, så kun stater med Case_Fatality_Ratio over 1 kommer frem
+df[df$Case_Fatality_Ratio > 1,]
+
+# filtrer på dataframe, så kun stater med Case_Fatality_Ratio over 1 og Confirmed over 30000 kommer frem
+df[df$Case_Fatality_Ratio > 1 & df$Confirmed > 30000,]
+

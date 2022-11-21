@@ -1,5 +1,9 @@
 
 ## 4. Grundlæggende kodning i R
+
+Se på lektion 3 øvelser!
+
+
 # Hvad er pakker i R?
 # Ideen bag open source og code
 
@@ -17,22 +21,61 @@
 
 
 
-
-
-
 # Dataframe funktioner
 
+test_df1 <- data.frame(
+  ID1=c("en","to","tre","fire"),
+  kolonne1=c(1,2,3,4), 
+  kolonne2=c(10,20,30,40)
+  )
 
+test_df2 <- data.frame(
+  ID2=c("en","to","tre","fire"),
+  kolonne1=c(11,12,13,14), 
+  kolonne2=c(100,200,300,400)
+)
 
-- cbind
-- rbind
-- merge
+#Sæt datasæt sammen ved kolonner - ens antal rækker kræves
+cbind(test_df1, test_df2)
+
+fail_df1 <- data.frame(
+  kolonne1=c(1,2,3), 
+  kolonne2=c(100,200,300)
+  )
+cbind(test_df1, fail_df1)
+
+# Sæt datasæt sammen ved rækker - ens antal kolonner kræves
+rbind(test_df1, test_df2)
+
+fail_df2 <- data.frame(
+  kolonne1=c(1,2,3), 
+  kolonne2=c(100,200,300), 
+  kolonne3=c(10,20,30)
+  )
+rbind(test_df1, fail_df2) # fejler pga forkerte kolonnenavne
+
+fail_df3 <- data.frame(ID=c("en","to","tre"), fail_df2)
+rbind(test_df1, fail_df3) # fejler pga forkerte kolonnenavne
+
+# Sæt datasæt sammen ved rækker med en fælles id
+merge(x = test_df1, 
+      y = test_df2, 
+      by.x = "ID1", 
+      by.y = "ID2")
+
 
 
 
 # Scopes i R
-# Environments
+# Environments - Hvor kigger R efter objekter/funktioner - se også environments tab
 search()
+
+library(palmerpenguins)
+
+search()
+
+
+
 
 # Hvordan laver man en funktion i R?
   # - definition
@@ -95,11 +138,15 @@ plus_og_divider <- function(tal1, tal2, tal3) {
 }
 plus_og_divider(tal1, tal2, tal3)
 
+
+
+# Brug istedet separate funktioner
 plus <- function(tal1, tal2) {
   resultat <- tal1 + tal2
   resultat
 }
 tal4 <- plus(tal1, tal2)
+
 
 divider <- function(tal3, tal4) {
   resultat <- tal4 / tal3
@@ -109,10 +156,39 @@ divider(tal4, tal3)
 
 
 
+
+
+
 ### Øvelser
 # Dataframe øvelser
+penguins <- palmerpenguins::penguins
 
 
-# find på en funktion med en sætning
-# find på en funktion med tal og en default værdi
+
+
+
+# Sæt nedenstående dataframes sammen på to forskellige måder. Sæt ID_kolonne_vektor ind hvis nødvendigt.
+ID_kolonne_vektor=c("A","B","C","D")
+
+df1 <- data.frame(
+  ID=c("A","A","B","C"),
+  tal_kolonne=c(23,30,25,20),
+  tekst_kolonne=c("ord1","ord2","ord3","ord4")
+)
+
+df2 <- data.frame(
+  tal_kolonne=c(22,35,25,10),
+  tekst_kolonne=c("ord6","ord2","ord9","ord4")
+)
+
+# find på en funktion der giver en sætning tilbage hvor input_ordet indgår i en sætning som printes ud
+faerdig_saetning <- function(input) {
+  
+}
+
+
+# find på en funktion der sammenligner 2 tal for at se om de er ens og printer resultatet, og ændr funktionen så tal nummer 2 får en default værdi
+tal_sammenligning <- function(tal1, tal2) {
+  
+}
 
