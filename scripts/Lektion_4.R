@@ -1,7 +1,7 @@
 
 ## 4. Grundlæggende kodning i R
 
-Se på lektion 3 øvelser!
+#Se på lektion 3 øvelser!
 
 
 # Hvad er pakker i R?
@@ -23,7 +23,7 @@ Se på lektion 3 øvelser!
 
 # Gode funktioner til oversigt
 # table
-mtcars$gear
+
 table(mtcars$gear)
 
 summary(mtcars$wt)
@@ -40,7 +40,7 @@ test_df1 <- data.frame(
   )
 
 test_df2 <- data.frame(
-  ID2=c("en","to","tre","fire"),
+  ID1=c("en","to","tre","fire"),
   kolonne1=c(11,12,13,14), 
   kolonne2=c(100,200,300,400)
 )
@@ -68,12 +68,10 @@ fail_df3 <- data.frame(ID=c("en","to","tre"), fail_df2)
 rbind(test_df1, fail_df3) # fejler pga forkerte kolonnenavne
 
 # Sæt datasæt sammen ved rækker med en fælles id
-merge(x = test_df1, 
+View(merge(x = test_df1, 
       y = test_df2, 
       by.x = "ID1", 
-      by.y = "ID2")
-
-
+      by.y = "ID1"))
 
 
 # Scopes i R
@@ -95,16 +93,17 @@ search()
 
 test_variabel <- "test"
 
-hej_funktion <- function(argument1="Julian") {
+hej_funktion <- function(argument1="Julian", argument2) {
   test_variabel <- argument1
   
   print(paste0("Hej, jeg hedder: ", argument1))
 }
 
 # funktion med default værdi
-hej_funktion()
+test_variabel <- hej_funktion()
+test_variabel
 # med specificeret værdi
-hej_funktion("Jan")
+hej_funktion("test", "Jan")
 
 # variable udenfor funktionen ændres ikke
 test_variabel
@@ -117,10 +116,16 @@ hej_funktion <- function(argument1="Julian") {
   test_variabel <- argument1
   print(paste0("Hej, jeg hedder: ", argument1))
 }
+  
 hej_funktion()
 
+ls()
+
 rm("test_variabel")
-hej_funktion()
+ls()
+
+rm(list=ls())
+ls()
 
 
 #Best practice
@@ -157,7 +162,6 @@ plus <- function(tal1, tal2) {
 }
 tal4 <- plus(tal1, tal2)
 
-
 divider <- function(tal3, tal4) {
   resultat <- tal4 / tal3
   resultat
@@ -167,19 +171,29 @@ divider(tal4, tal3)
 
 
 
+### Smagsprøve på data visualisering
+plot(x = test_df1$kolonne2, y = test_df1$kolonne1)
+hist(mtcars$cyl)
+
+
+
 
 ### Øvelser
 # Dataframe øvelser
 penguins <- palmerpenguins::penguins
 
 # Find antallet af NA i sex kolonnen
+sum(is.na(penguins$sex))
 
 # Find pingviner som har bill_length_mm over 40, fra 2008, med body_mass_g under 3500. Print deres flipper_length_mm
+penguins[penguins$bill_length_mm > 40 & penguins$year == 2008 & penguins$body_mass_g < 3500,]
+
+penguins$flipper_length_mm[penguins$bill_length_mm > 40 & penguins$year == 2008 & penguins$body_mass_g < 3500]
 
 
+# Sæt nedenstående dataframes sammen på to forskellige måder. 
+# Sæt ID_kolonne_vektor ind hvis nødvendigt.
 
-
-# Sæt nedenstående dataframes sammen på to forskellige måder. Sæt ID_kolonne_vektor ind hvis nødvendigt.
 ID_kolonne_vektor=c("A","B","C","D")
 
 df1 <- data.frame(
@@ -193,14 +207,31 @@ df2 <- data.frame(
   tekst_kolonne=c("ord6","ord2","ord9","ord4")
 )
 
+cbind(df1, df2)
+
+df2_with_ID <- cbind(ID_kolonne_vektor, df2)
+
+merge(x = df1, y = df2_with_ID, by.x = "ID", by.y = "ID_kolonne_vektor")
+
+### For at lave nye kolonner i eksisterende dataframe
+df2$ID <- ID_kolonne_vektor
+df2["ID"] <- ID_kolonne_vektor
+### For at lave om på kolonners navne
+new_order <- c("ID","tal_kolonne","tekst_kolonne")
+df2 <- df2[, new_order]
+
 # find på en funktion der giver en sætning tilbage hvor input_ordet indgår i en sætning som printes ud
 faerdig_saetning <- function(input) {
-  
+  print(paste0("Jeg printer: ", input))
 }
 
+faerdig_saetning("test")
 
-# find på en funktion der sammenligner 2 tal for at se om de er ens og printer resultatet, og ændr funktionen så tal nummer 2 får en default værdi
-tal_sammenligning <- function(tal1, tal2) {
-
+# find på en funktion der sammenligner 2 tal for at se om de er ens,
+# printer resultatet, og ændr funktionen så tal nummer 2 får en default værdi
+tal_sammenligning <- function(tal1, tal2=2) {
+  ens <- tal1 == tal2
+  print(ens)
 }
+tal_sammenligning(2)
 
