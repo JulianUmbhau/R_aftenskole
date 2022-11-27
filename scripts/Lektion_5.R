@@ -114,7 +114,7 @@ ggplot(penguins_clean,
   geom_point(aes(color=species))
 
 
-
+### plot med data fra 2 forskellige datasæt
 
 
 # Øvelser
