@@ -85,6 +85,10 @@ library(ggplot2)
 # clean dataset
 penguins_clean <- na.omit(penguins)
 
+# Histogram
+ggplot(penguins_clean, aes(body_mass_g)) +
+  geom_histogram()
+
 # boxplot
 ggplot(data = penguins_clean, 
        mapping = aes(sex, body_mass_g)) +
@@ -111,20 +115,27 @@ ggplot(penguins_clean,
 # scatterplot with species as color
 ggplot(penguins_clean, 
        aes(body_mass_g, bill_length_mm)) +
-  geom_point(aes(color=species))
-
-
-### plot med data fra 2 forskellige datasæt
+  geom_point(aes(color=species)) +
+  geom_hline(yintercept = mean(penguins_clean$bill_length_mm), col="blue") +
+  geom_vline(xintercept = mean(penguins_clean$body_mass_g), col="red") 
 
 
 # Øvelser
-# Basic plotting
+# Plotting med base R
+mtcars <- mtcars
+# Lav et Histogram med disp kolonnen i mtcars datasættet 
 
-# SCatterplot
+# Lav et scatterplot med mtcars kolonnerne hp og disp
 
-# Histogram
+# Lav et scatterplot hvor du selv vælger 2 kolonner fra mtcars datasættet 
+# eller penguins datasættet. Giv det en titel og giv akserne navne
 
 
 # GGplot2
+# Lav et histogram i ggplot2 - vælg selv dit datasæt eller brug mtcars
 
-# 
+# lav et boxplot i ggplot2
+
+# Lav et scatterplot med brug af 2 kolonner i ggplot2
+
+# Lav et scatterplot der bruger 2 kolonner og laver farver med en 3. kolonne
