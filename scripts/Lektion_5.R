@@ -6,17 +6,17 @@
 
 penguins <- palmerpenguins::penguins
 
-summary(penguins)
+summary(penguins$bill_length_mm)
 
 mean(penguins$bill_length_mm, na.rm = TRUE)
 
 median(penguins$bill_length_mm, na.rm = TRUE)
 
-unique(penguins$species)
-
 max(penguins$bill_length_mm, na.rm = TRUE)
 
 min(penguins$bill_length_mm, na.rm = TRUE)
+
+unique(penguins$species)
 
 class(penguins$bill_length_mm)
 
@@ -33,11 +33,10 @@ View(penguins)
 
 
 # randomisering
-
 runif(20, 0, 20) # random uniform
 
-sample(c(1:20), size = 10)
-sample(c(1:20), size = 25, replace = T)
+sample(x = c(1:20), size = 10)
+sample(x = c(1:20), size = 25, replace = TRUE)
 
 
 # for at randomisere index
@@ -49,12 +48,12 @@ plot(penguins_random$body_mass_g)
 ### histogram
 hist(penguins$body_mass_g)
 
-hist(penguins$body_mass_g,breaks = 50)
+hist(penguins$body_mass_g, breaks = 40)
 rug(penguins$body_mass_g)
 
 ### scatterplot
 plot(penguins$body_mass_g, penguins$bill_length_mm)
-rug(penguins$body_mass_g)
+rug(penguins$body_mass_g, col = "red")
 
 ### Boxplot
 plot(penguins$species, penguins$bill_length_mm)
@@ -67,8 +66,6 @@ plot(penguins$species, penguins$island)
 
 ### scatterplot 
 datasets::women
-
-plot(datasets::women$height, datasets::women$weight)
 
 plot(datasets::women)
 
@@ -86,8 +83,8 @@ library(ggplot2)
 penguins_clean <- na.omit(penguins)
 
 # Histogram
-ggplot(penguins_clean, aes(body_mass_g)) +
-  geom_histogram()
+ggplot(data = penguins_clean, aes(body_mass_g)) +
+  geom_histogram(binwidth = 50)
 
 # boxplot
 ggplot(data = penguins_clean, 
@@ -97,7 +94,7 @@ ggplot(data = penguins_clean,
 # scatter of sex vs mass + jitter
 ggplot(data = penguins_clean, 
        mapping = aes(sex, body_mass_g)) +
-  geom_point() # + geom_jitter()
+  geom_point() #+ geom_jitter()
 
 # simple scatterplot
 ggplot(penguins_clean, 
@@ -115,9 +112,42 @@ ggplot(penguins_clean,
 # scatterplot with species as color
 ggplot(penguins_clean, 
        aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(color=species))
+
+ggplot(penguins_clean, 
+       aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
   geom_hline(yintercept = mean(penguins_clean$bill_length_mm), col="blue") +
   geom_vline(xintercept = mean(penguins_clean$body_mass_g), col="red") 
+
+# med køn som punkter
+ggplot(penguins_clean,
+       aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(shape=species, color=sex))
+
+
+# med filtrering
+ggplot(penguins_clean[penguins_clean$body_mass_g > 3500 & penguins_clean$species != "Chinstrap",],
+       aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(color=species))
+
+
+# med regression og konfidenstinterval
+test <- lm(formula = bill_length_mm ~ body_mass_g, data = penguins_clean)
+ggplot(penguins_clean, 
+       aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(color=species)) +
+  geom_abline(slope = test$coefficients[[2]], intercept = test$coefficients[[1]])
+
+ggplot(penguins_clean, 
+       aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(color=species)) +
+  geom_smooth(method = "lm")
+
+ggplot(penguins_clean, 
+       aes(body_mass_g, bill_length_mm)) +
+  geom_point(aes(color=species)) +
+  geom_smooth(method = "lm")
 
 
 # Øvelser
