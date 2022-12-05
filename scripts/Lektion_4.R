@@ -37,7 +37,7 @@ test_df1 <- data.frame(
   ID1=c("en","to","tre","fire"),
   kolonne1=c(1,2,3,4), 
   kolonne2=c(10,20,30,40)
-  )
+)
 
 test_df2 <- data.frame(
   ID1=c("en","to","tre","fire"),
@@ -51,7 +51,7 @@ cbind(test_df1, test_df2)
 fail_df1 <- data.frame(
   kolonne1=c(1,2,3), 
   kolonne2=c(100,200,300)
-  )
+)
 cbind(test_df1, fail_df1)
 
 # Sæt datasæt sammen ved rækker - ens antal kolonner kræves
@@ -61,7 +61,7 @@ fail_df2 <- data.frame(
   kolonne1=c(1,2,3), 
   kolonne2=c(100,200,300), 
   kolonne3=c(10,20,30)
-  )
+)
 rbind(test_df1, fail_df2) # fejler pga forkerte kolonnenavne
 
 fail_df3 <- data.frame(ID=c("en","to","tre"), fail_df2)
@@ -69,9 +69,9 @@ rbind(test_df1, fail_df3) # fejler pga forkerte kolonnenavne
 
 # Sæt datasæt sammen ved rækker med en fælles id
 View(merge(x = test_df1, 
-      y = test_df2, 
-      by.x = "ID1", 
-      by.y = "ID1"))
+           y = test_df2, 
+           by.x = "ID1", 
+           by.y = "ID1"))
 
 
 # Scopes i R
@@ -86,10 +86,10 @@ search()
 
 
 # Hvordan laver man en funktion i R?
-  # - definition
-  # - scope - funktion foregår i undermiljø
-  # - input
-  # - output
+# - definition
+# - scope - funktion foregår i undermiljø
+# - input
+# - output
 
 test_variabel <- "test"
 
@@ -116,7 +116,7 @@ hej_funktion <- function(argument1="Julian") {
   test_variabel <- argument1
   print(paste0("Hej, jeg hedder: ", argument1))
 }
-  
+
 hej_funktion()
 
 ls()
@@ -186,7 +186,9 @@ penguins <- palmerpenguins::penguins
 sum(is.na(penguins$sex))
 
 # Find pingviner som har bill_length_mm over 40, fra 2008, med body_mass_g under 3500. Print deres flipper_length_mm
-penguins[penguins$bill_length_mm > 40 & penguins$year == 2008 & penguins$body_mass_g < 3500,]
+penguins[penguins$bill_length_mm > 40 & 
+           penguins$year == 2008 & 
+           penguins$body_mass_g < 3500,]
 
 penguins$flipper_length_mm[penguins$bill_length_mm > 40 & penguins$year == 2008 & penguins$body_mass_g < 3500]
 

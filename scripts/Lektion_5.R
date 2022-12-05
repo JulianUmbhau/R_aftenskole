@@ -38,7 +38,6 @@ runif(20, 0, 20) # random uniform
 sample(x = c(1:20), size = 10)
 sample(x = c(1:20), size = 25, replace = TRUE)
 
-
 # for at randomisere index
 sample(length(penguins$species)) 
 penguins_random <- penguins[sample(length(penguins$species)),]
@@ -49,7 +48,7 @@ plot(penguins_random$body_mass_g)
 hist(penguins$body_mass_g)
 
 hist(penguins$body_mass_g, breaks = 40)
-rug(penguins$body_mass_g)
+rug(penguins$body_mass_g, lwd = 0.50)
 
 ### scatterplot
 plot(penguins$body_mass_g, penguins$bill_length_mm)
@@ -69,9 +68,13 @@ datasets::women
 
 plot(datasets::women)
 
-plot(datasets::women$height, datasets::women$weight, 
-     type = "b", main = "Kvinders højde vs vægt", 
-     xlab = "Vægt", ylab = "Højde", xlim = c(50,75))
+plot(datasets::women$height, 
+     datasets::women$weight, 
+     type = "b", 
+     main = "Kvinders højde vs vægt", 
+     xlab = "Vægt", 
+     ylab = "Højde", 
+     xlim = c(50,75))
 
 
 
@@ -83,8 +86,9 @@ library(ggplot2)
 penguins_clean <- na.omit(penguins)
 
 # Histogram
-ggplot(data = penguins_clean, aes(body_mass_g)) +
-  geom_histogram(binwidth = 50)
+ggplot(data = penguins_clean, 
+       mapping = aes(body_mass_g)) +
+  geom_histogram(bins = 50)
 
 # boxplot
 ggplot(data = penguins_clean, 
@@ -94,11 +98,13 @@ ggplot(data = penguins_clean,
 # scatter of sex vs mass + jitter
 ggplot(data = penguins_clean, 
        mapping = aes(sex, body_mass_g)) +
-  geom_point() #+ geom_jitter()
+  geom_point() + 
+  geom_jitter()
 
 # simple scatterplot
 ggplot(penguins_clean, 
-       aes(body_mass_g, bill_length_mm)) +
+       aes(body_mass_g, 
+           bill_length_mm)) +
   geom_point()
 
 # scatterplot with title and rug
@@ -129,11 +135,13 @@ ggplot(penguins_clean,
 # med filtrering
 ggplot(penguins_clean[penguins_clean$body_mass_g > 3500 & penguins_clean$species != "Chinstrap",],
        aes(body_mass_g, bill_length_mm)) +
-  geom_point(aes(color=species))
+  geom_point(aes(color=species)) +
+  theme_bw()
 
 
 # med regression og konfidenstinterval
-test <- lm(formula = bill_length_mm ~ body_mass_g, data = penguins_clean)
+test <- lm(formula = bill_length_mm ~ body_mass_g, 
+           data = penguins_clean)
 ggplot(penguins_clean, 
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
@@ -142,7 +150,7 @@ ggplot(penguins_clean,
 ggplot(penguins_clean, 
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "loess")
 
 ggplot(penguins_clean, 
        aes(body_mass_g, bill_length_mm)) +
