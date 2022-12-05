@@ -110,7 +110,7 @@ mtcars_tibble %>%
             wt_median = median(wt))
 
 
-# bidning rows and columns
+# binding rows and columns
 df1 <- tibble(v1=c(1,2,3), v2=c(2,3,4))
 df2 <- tibble(v1=c(1,2,3), v2=c(2,3,4))
 bind_rows(df1, df2, .id = "orig_df")
@@ -144,5 +144,36 @@ tidyr::pivot_longer(penguins)
 
 
 
-# Øvelser
+# Øvelser - tidyverse
+install.packages("palmerpenguins")
+install.packages("dplyr")
+install.packages("tidyr")
+install.packages("tibble")
+library(dplyr)
+library(tidyr)
+library(tibble)
+
+penguins <- palmerpenguins::penguins
+
+#find datatypen for penguins datasættet - er det en tibble dataframe? Hvis ikke, lav det om til en tibble
+
+# Lav en filtrering så kun Adelies species vises, med brug af pipes
+
+# Lav en filtrering med brug af flere variable, brug pipes
+
+# Lav en ny variabel ved at bearbejde to eksisterende variable i penguins
+
+# Filtrer på denne variabel i samme pipe som den dannes
+
+# udvælg to variable som skal printes ud, og sorter dem i samme ombæring vha. pipes
+
+# udregn gennemsnits flipper_length vha summarise
+
+# Udregn gennemsnits flipper_length for de tre forskellgie arter, vha. summarise og group by
+
+df1 <- tibble(v1=c(1,2,3), v2=c(20,30,40))
+df2 <- tibble(v1=c(10,20,30), v2=c(2,3,4))
+# brug bind_rows og bind_cols på df1 og df2
+
+# lav nesting af data, på island variablen
 
