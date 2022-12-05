@@ -1,4 +1,4 @@
-## 5. Data udforskning og visualisering 
+## 5. Data udforskning og visualisering
 
 # Gennemgang af lektion 4 øvelser
 
@@ -40,7 +40,7 @@ sample(x = c(1:20), size = 25, replace = TRUE)
 
 
 # for at randomisere index
-sample(length(penguins$species)) 
+sample(length(penguins$species))
 penguins_random <- penguins[sample(length(penguins$species)),]
 
 plot(penguins_random$body_mass_g)
@@ -64,13 +64,13 @@ plot(penguins$sex, penguins$body_mass_g)
 plot(penguins$species, penguins$island)
 
 
-### scatterplot 
+### scatterplot
 datasets::women
 
 plot(datasets::women)
 
-plot(datasets::women$height, datasets::women$weight, 
-     type = "b", main = "Kvinders højde vs vægt", 
+plot(datasets::women$height, datasets::women$weight,
+     type = "b", main = "Kvinders højde vs vægt",
      xlab = "Vægt", ylab = "Højde", xlim = c(50,75))
 
 
@@ -87,22 +87,22 @@ ggplot(data = penguins_clean, aes(body_mass_g)) +
   geom_histogram(binwidth = 50)
 
 # boxplot
-ggplot(data = penguins_clean, 
+ggplot(data = penguins_clean,
        mapping = aes(sex, body_mass_g)) +
   geom_boxplot()
 
 # scatter of sex vs mass + jitter
-ggplot(data = penguins_clean, 
+ggplot(data = penguins_clean,
        mapping = aes(sex, body_mass_g)) +
   geom_point() #+ geom_jitter()
 
 # simple scatterplot
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point()
 
 # scatterplot with title and rug
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point() +
   labs(title = "Penguin Mass vs Bill Length - grouped in species",
@@ -110,15 +110,15 @@ ggplot(penguins_clean,
   geom_rug()
 
 # scatterplot with species as color
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species))
 
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
   geom_hline(yintercept = mean(penguins_clean$bill_length_mm), col="blue") +
-  geom_vline(xintercept = mean(penguins_clean$body_mass_g), col="red") 
+  geom_vline(xintercept = mean(penguins_clean$body_mass_g), col="red")
 
 # med køn som punkter
 ggplot(penguins_clean,
@@ -134,17 +134,17 @@ ggplot(penguins_clean[penguins_clean$body_mass_g > 3500 & penguins_clean$species
 
 # med regression og konfidenstinterval
 test <- lm(formula = bill_length_mm ~ body_mass_g, data = penguins_clean)
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
   geom_abline(slope = test$coefficients[[2]], intercept = test$coefficients[[1]])
 
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
   geom_smooth(method = "lm")
 
-ggplot(penguins_clean, 
+ggplot(penguins_clean,
        aes(body_mass_g, bill_length_mm)) +
   geom_point(aes(color=species)) +
   geom_smooth(method = "lm")
@@ -153,19 +153,35 @@ ggplot(penguins_clean,
 # Øvelser
 # Plotting med base R
 mtcars <- mtcars
-# Lav et Histogram med disp kolonnen i mtcars datasættet 
+# Lav et Histogram med disp kolonnen i mtcars datasættet
+hist(mtcars$disp)
 
 # Lav et scatterplot med mtcars kolonnerne hp og disp
+plot(mtcars$hp, mtcars$disp)
 
-# Lav et scatterplot hvor du selv vælger 2 kolonner fra mtcars datasættet 
+# Lav et scatterplot hvor du selv vælger 2 kolonner fra mtcars datasættet
 # eller penguins datasættet. Giv det en titel og giv akserne navne
+plot( mtcars$hp, mtcars$mpg, main = "Efficiens vs styrke", xlab = "Hestekræfter", ylab = "Miles per Gallon")
 
 
 # GGplot2
 # Lav et histogram i ggplot2 - vælg selv dit datasæt eller brug mtcars
+library(ggplot2)
+ggplot(mtcars,
+       aes(mpg)) +
+  geom_histogram()
 
 # lav et boxplot i ggplot2
+ggplot(mtcars,
+       aes(as.factor(cyl), hp)) +
+  geom_boxplot()
 
 # Lav et scatterplot med brug af 2 kolonner i ggplot2
+ggplot(mtcars,
+       aes(hp, mpg)) +
+  geom_point()
 
 # Lav et scatterplot der bruger 2 kolonner og laver farver med en 3. kolonne
+ggplot(mtcars,
+       aes(hp, mpg)) +
+  geom_point(aes(color=as.factor(cyl)))
